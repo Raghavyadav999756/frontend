@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td:hover {
+           background-color: rgb(64, 85, 128);
+           color: black;
+           cursor: pointer;
+            }
+        tr:hover {
+           background-color: RED;
+           }
+
+        tbody tr:nth-child(even) {
+              background-color: #e6f7ff;
+           }
+        tbody tr:nth-child(odd) {
+              background-color: #ffffff;
+            }
+
+        body{
+            margin:0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        fieldset{
+            width:90%;
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        table{
+            width: 100%;
+            height: 100%;
+
+            text-align: center;
+            border-collapse: collapse;
+            background-color: aqua;
+            color:blue;
+            font-size: 18px;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend><h1 colspan="10">GLA University, (Mathura), Academic Time Table</h1></legend>
+        <table border="3">
+        <thead>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </thead>
+        <tbody>
+                <tr>
+                <td>8am to 9 am</td>
+                <td>OOps lab</td>
+                <td>C O lab</td>
+                <td> OOps lec</td>
+                <td>OOps lec</td>
+                <td>Frontend lec</td>
+                </tr>
+                <tr>
+                    <td>9am to 10 am</td>
+                    <td>OOps lab</td>
+                    <td>CO lab</td>
+                    <td>OOps lec</td>
+                    <td>OOps lec</td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>10 am to 11 am</td>
+                    <td>Frontend Engineering lab</td>
+                    <td>English for Professional Purposes</td>
+                    <td>C O Lec</td>
+                    <td>Coding and Programming Aptitude </td>
+                    <td>DBMS Lab</td>
+                </tr>
+                <tr>
+                    <td>11am to 12pm</td>
+                    <td>Introduction to Frontend Engineering Lab</td>
+                    <td>Frontend Engineering Lec</td>
+                    <td>Frontend Engineering Lec</td>
+                    <td>C O Lec</td>
+                    <td>DBMS Lab</td>
+                </tr>
+                <tr>
+                    <td>1pm to 2 pm</td>
+                    <td>English For Professional Purposes Lec</td>
+                    <td>Discrete Maths Lec</td>
+                    <td>Coding and Programming Aptitude lec </td>
+                    <td>Discrete Mathematics lec</td>
+                    <td>C O Lec</td>
+                </tr>
+                <tr>
+                    <td>2pm to 3pm</td>
+                    <td>Discrete Mathematics tut</td>
+                    <td>----</td>
+                    <td>----</td>
+                    <td>DBMS lec</td>
+                    <td>Discrete Mathematics lec</td>
+                </tr>
+                <tr>
+                    <td>3pm to 4 pm</td>
+                    <td>DBMS lec</td>
+                    <td>DBMS lec</td>
+                    <td>English for Professional Purpose tut</td>
+                    <td>English for Professional Purpose tut</td>
+                    <td>----</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr >
+                    <td colspan="6">Time Table of FB Section</td>
+                </tr>
+            </tfoot>
+    </table>
+    </fieldset>
+</body>
+</html>
