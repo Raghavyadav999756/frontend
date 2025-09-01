@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <style>
+    /* 1. Element Selector */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: hsl(210, 50%, 95%);
+      color: #333;
+      margin: 20px;
+    }
+
+    /* 2. Class Selector */
+    .team-member {
+      background-color: rgba(56, 194, 35, 0.1);
+      border-left: 5px solid #10e3e3;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-radius: 8px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 3px solid #008080;
+    }
+
+    /* 3. ID Selector */
+    #ceo {
+      background-color: #ffeeba;
+      color: rgb(102, 51, 0);
+      font-weight: bold;
+      border-left-color: #e1a708;
+    }
+
+    /* 4. Attribute Selector */
+    a[href^="https://"] {
+      color: #0a83fc;
+      text-decoration: none;
+    }
+
+    /* 5. Pseudo-class Selector */
+    a:hover {
+      color: #cc0000;
+    }
+
+    /* 6. Pseudo-element Selector */
+    p::first-line {
+      font-weight: bold;
+      color: hsl(120, 100%, 25%);
+    }
+
+    /* Movies List */
+    ul.movies {
+      list-style-type:square;
+      padding-left: 20px;
+    }
+
+    ul.movies li.favorite {
+      color: #d40d5d;
+      font-weight: bold;
+      background-color: rgba(235, 91, 199, 0.1);
+      padding: 5px;
+    }
+
+    /* Cities List */
+    ol.cities {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+
+    ol.cities li:nth-child(odd) {
+      color: hsl(270, 70%, 40%);
+      background-color:rgb(148, 206, 152);
+    }
+
+    ol.cities li:nth-child(even) {
+      color: #005f73;
+      background-color: #e0fbfc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>About Us</h1>
+  <p>We are a team of dedicated professionals who believe in innovation, collaboration, and excellence.</p>
+
+  <!-- CEO Section -->
+  <div class="team-member" id="ceo">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.E9EL_pIeUVbLOTuk0VWKOQHaE7?pid=Api&P=0&h=220 " alt="Jane Doe"> 
+    <div>
+      <h2>Jane Doe - CEO</h2>
+      <p>Jane leads with vision and passion. Her favorite quote is <a href="https://example.com/vision">"Think big."</a></p>
+    </div>
+  </div>
+
+  <!-- Developer Section -->
+  <div class="team-member">
+    <img src="https://www.bestkayakszone.com/wp-content/uploads/2024/08/John-Smith-Kayaks-Expert.jpg" alt="John Smith - Developer">
+    <div>
+      <h2>John Smith - Developer</h2>
+      <p>John writes clean code and <a href="https://example.com/code">builds scalable systems.</a></p>
+    </div>
+  </div>
+
+  <!-- Favorite Movies -->
+  <h2>Favorite Movies</h2>
+  <ul class="movies">
+    <li>Inception</li>
+    <li class="favorite">The Matrix</li>
+    <li>Interstellar</li>
+    <li>Parasite</li>
+  </ul>
+
+  <!-- Cities List -->
+  <h2>Cities We Operate In</h2>
+  <ol class="cities">
+    <li>New York</li>
+    <li>Tokyo</li>
+    <li>London</li>
+    <li>Sydney</li>
+    <li>Berlin</li>
+  </ol>
+
+</body>
+</html>
