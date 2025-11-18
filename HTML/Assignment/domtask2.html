@@ -1,0 +1,143 @@
+]<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+           
+            background: linear-gradient(135deg, #5A00FF, #FF0095, #FFB300);
+
+            font-family: Poppins, Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            width: 350px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 130px;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            resize: none;
+            background: #ffffffcc;
+        }
+
+        .counter-box {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+       
+        .digit-wrapper {
+            height: 30px;
+            overflow: hidden;
+            display: inline-block;
+            width: 20px;
+        }
+
+        .digits {
+            display: block;
+            transition: transform 0.3s ease-out;
+            color: #fff;
+        }
+
+        .digits div {
+            height: 30px;
+        }
+        
+        .bar-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 100%;
+            background: #00ff8c;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="color:white;">Character Counter</h2>
+
+    <textarea id="textBox" maxlength="200" oninput="updateCount()"></textarea>
+
+    <!-- Pipeline decreasing bar -->
+    <div class="bar-container">
+        <div class="bar-fill" id="bar"></div>
+    </div>
+
+    <div class="counter-box">
+        <span>Left:</span>
+
+        <div id="d1" class="digit-wrapper"><div class="digits"></div></div>
+        <div id="d2" class="digit-wrapper"><div class="digits"></div></div>
+        <div id="d3" class="digit-wrapper"><div class="digits"></div></div>
+    </div>
+</div>
+
+<script>
+    const max = 200;
+
+    // Build digits 0–9 for rollers
+    function setupDigits() {
+        document.querySelectorAll(".digits").forEach(d => {
+            for (let i = 0; i <= 9; i++) {
+                let div = document.createElement("div");
+                div.innerText = i;
+                d.appendChild(div);
+            }
+        });
+    }
+    setupDigits();
+
+    function updateCount() {
+        let length = document.getElementById("textBox").value.length;
+        let left = max - length;
+
+        // Update roller digits
+        let str = left.toString().padStart(3, "0");
+        document.querySelectorAll(".digit-wrapper").forEach((wrapper, i) => {
+            let digit = parseInt(str[i]);
+            wrapper.querySelector(".digits").style.transform =
+                `translateY(-${digit * 30}px)`;
+        });
+
+        // Update decreasing pipeline bar
+        let percent = (left / max) * 100;
+        document.getElementById("bar").style.width = percent + "%";
+    }
+
+    updateCount();
+</script>
+
+</body>
+</html>
