@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Feed App</title>
+  <link rel="stylesheet" href="domtask1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>📅 My Task Feed</h1>
+
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Task Title" required />
+      <input type="datetime-local" id="dueDate" required />
+      <textarea id="description" placeholder="Description (optional)"></textarea>
+      <button type="submit">➕ Add Task</button>
+    </form>
+
+    <div id="taskFeed"></div>
+  </div>
+
+  <script src="domtask1.js"></script>
+</body>
+</html>
