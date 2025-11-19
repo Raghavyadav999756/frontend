@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #fefbd8;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .joke-container {
+            background: #fff;
+            padding: 30px;
+            margin: 20px auto;
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .setup {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .punchline {
+            font-size: 16px;
+            color: #007bff;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #ff7f50;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background: #ff4500;
+        }
+
+        .error {
+            color: red;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>हिंदी जोक जेनरेटर</h2>
+
+<div class="joke-container" id="jokeBox">
+    <div class="setup" id="setup">लोड हो रहा है...</div>
+    <div class="punchline" id="punchline"></div>
+</div>
+
+<button id="nextBtn" onclick="getJoke()">अगला जोक</button>
+<div class="error" id="errorMsg"></div>
+
+<script>
+    const setupEl = document.getElementById("setup");
+    const punchlineEl = document.getElementById("punchline");
+    const errorEl = document.getElementById("errorMsg");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Hindi jokes array (10 jokes)
+    const jokes = [
+        {setup: "टीचर: अगर पृथ्वी से पानी खत्म हो जाए तो क्या होगा?", punchline: "स्टूडेंट: सर, हमारी चाय और कॉफी नहीं बनेगी!"},
+        {setup: "पप्पू: मम्मी, मैं डायनासोर बन सकता हूँ?", punchline: "मम्मी: नहीं बेटा, वो अब तक नहीं बचा!"},
+        {setup: "संजू: अगर मैं उड़ सकूँ तो?", punchline: "गुड्डू: एयर इंडिया में जॉब कर लो!"},
+        {setup: "मोहन: कंप्यूटर ने मुझसे बात की!", punchline: "सोहन: हाँ, वही Ctrl+Alt+Delete वाला!"},
+        {setup: "रामू: मम्मी, मेरा होमवर्क गायब है!", punchline: "मम्मी: वैसे ही तो तू स्कूल में गायब रहता है!"},
+        {setup: "टीचर: 2+2 कितने होते हैं?", punchline: "पप्पू: सर, मोबाइल में चेक करना पड़ेगा!"},
+        {setup: "पप्पू: मम्मी, मुझे कॉमेडी एक्ट करना है!", punchline: "मम्मी: पहले घर का काम करो बेटा, तभी सब हँसेंगे!"},
+        {setup: "गुड्डू: मेरा बैग कहाँ है?", punchline: "रामू: वही जो स्कूल में खो गया था!"},
+        {setup: "पप्पू: डॉक्टर साहब, मुझे भूलने की बीमारी हो गई है!", punchline: "डॉक्टर: कब से? \n पप्पू: कब से क्या?"},
+        {setup: "मोहन: मुझे गणित समझ नहीं आता!", punchline: "सोहन: चिंता मत करो, मैं भी गिनती भूल जाता हूँ!"}
+    ];
+
+    function getJoke() {
+        nextBtn.disabled = true;
+        setupEl.textContent = "लोड हो रहा है...";
+        punchlineEl.textContent = "";
+        errorEl.textContent = "";
+
+        // Simulate delay
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const joke = jokes[randomIndex];
+
+            setupEl.textContent = joke.setup;
+            punchlineEl.textContent = joke.punchline;
+            nextBtn.disabled = false;
+        }, 500); // 0.5 second delay
+    }
+
+    // First joke on page load
+    getJoke();
+</script>
+
+</body>
+</html>
